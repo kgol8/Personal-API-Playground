@@ -18,11 +18,17 @@ reset:#resets the directory to the last commit
 	git pull
 
 
-kill:
+killserver:
 	ps -ef | grep "nodejs app.js" | awk '{print $$2}' | xargs kill -2
 	echo "PROBABLY WORKED"
 
 
-kill_alt:
+killserver_alt:
 	kill -2 $$(ps aux | grep 'nodejs app.js' | awk '{print $$2}')
 	echo "PROBABLY WORKED"
+
+startmongo:
+	sudo service mongod start
+
+killmongo:
+	sudo service mongod stop
