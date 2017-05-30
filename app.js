@@ -6,6 +6,9 @@ var bodyparser = require('body-parser');
 var mongoose = require('mongoose');
 var server = require('http').createServer(app);
 
+var server_tools = require('./server_tools');
+var rand_quote = server_tools.get_random_quote();
+
 // Connect to mongoose
 mongoose.connect('mongodb://localhost/API_test');
 var db = mongoose.connection;
