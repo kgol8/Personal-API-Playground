@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title></title>
+		<title>404 Error Page</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="client_tools.js"></script>
+        <link rel="stylesheet" href="theme.css">
 
-	</head>
-	<body>
+        <script>
+
+$(function () {
+    socket.emit('request_rand_quote');
+    socket.on('return_rand_quote', function (message) {
+        $('#errorMessage').text(message);  
+    });
+
+
+
+
+});
+
+        </script>
+    </head>
+    <body>
         <div>404 Page not found</div>
-	</body>
+    </body>
 </html>
 

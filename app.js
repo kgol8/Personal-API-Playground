@@ -20,7 +20,7 @@ app.use(bodyparser.json());
 // Express routing
 app.use(express.static(__dirname + "/"));	//set the location of the css file to serve
 app.get('/', function(req, res, next) {	//set file to serve when a connection is made
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/Pages/home.html')
 });
 
 var apiRouter = express.Router();
