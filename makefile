@@ -11,6 +11,7 @@ reset:#resets the directory to the last commit
 	git reset --hard HEAD
 	git clean -f -d
 	git pull
+
 startserver:
 	node app.js 
 

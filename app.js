@@ -23,14 +23,20 @@ app.get('/', function(req, res, next) {	//set file to serve when a connection is
     res.sendFile(__dirname + '/index.html')
 });
 
-var router = express.Router();
+var apiRouter = express.Router();
+var generalRouter = express.Router();
 
-router.get('/', function(req, res, next) {
+apiRouter.get('/', function(req, res, next) {
     res.json({message: 'hello, world'});
 });
 
+generalRouter.get('/404', function(req, res, next) {
+    res.sendFile(__dirname + "/Pages/missingPage.html");
+});
+
 // Register routes
-app.use('/api', router);
+app.use('/api', apiRouter);
+app.use('/', generalRouter);
 
 //  Listen
 server.listen(8080);
